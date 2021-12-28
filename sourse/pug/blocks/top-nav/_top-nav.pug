@@ -1,32 +1,41 @@
 mixin menu-toggle()
 	+b.toggle-menu-mobile--js
 		span
-mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
-	+b.menu-mobile--js
-		+b.toggle-menu-mobile--js
-			span
-		+e.inner
-			+mnu()
-	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
-		.container
-			.row
-				.col-auto.d-lg-none
-					+menu-toggle()
-				.col
-					.menu-mobile.menu-mobile--js
-						+menu-toggle()
-						+mnu()
-					
+	+b.top-nav
+		+e.desktop-menu
+			mixin item(pic)
+				+e.item(href="#")
+					+icon(`topnav-${pic}`)
+			-for (var x=1;x<14;x++)
+				+item(x)
+		+menu-mobile()
 	// end top-nav
+
+mixin menu-mobile()
+	+b.menu-mobile--js
+		+e.menu-head
+			+b.toggle-menu-mobile--js.d-lg-none
+				span
+			+e.logo(href="/")
+				img(src="img/svg/logo.svg", alt="")
+		+e.menu-body
+			mixin item(pic,title)
+				+e.item(href="#")
+					+e.item-pic
+						+icon(`topnav-${pic}`)
+					+e.item-title!=title
+			+item(1,`Главная`)
+			+item(2,`Регионы`)
+			+item(3,`Пользователи`)
+			+item(4,`Ведомство`)
+			+item(5,`Отряд`)
+			+item(6,`Группа`)
+			+item(7,`Дежурство`)
+			+item(8,`Заявки`)
+			+item(9,`Задачи`)
+			+item(10,`Звонки`)
+			+item(11,`Прозвоны`)
+			+item(12,`Авиа`)
+			+item(13,`Полезная информация`)
