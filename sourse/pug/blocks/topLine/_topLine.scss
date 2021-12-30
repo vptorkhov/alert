@@ -3,9 +3,22 @@
 	--sPT: 0;
 	--sPB: 0;
 	display: flex;
+	@include media-breakpoint-down(lg) {
+		--sPT: 8px;
+		--sPB: 8px;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.toggle-menu-mobile {
+		@include media-breakpoint-down(lg) {
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+	}
 	&__desktop-btn {
 		@include media-breakpoint-up(lg) {
 			display: block;
+			border-right: 1px solid #ebf1f9;
 		}
 		display: none;
 		border-right: 1px solid #ebf1f9;
@@ -17,7 +30,165 @@
 	&__logo-btn {
 		cursor: pointer;
 	}
+	&__logo {
+		width: 40px;
+		height: 40px;
+		display: block;
+	}
+	&__center {
+		display: flex;
+		justify-content: space-between;
+		@include media-breakpoint-up(lg) {
+			border-right: 1px solid #ebf1f9;
+			padding-left: 24px;
+			padding-right: 24px;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+		align-items: center;
+		padding-left: 8px;
+		padding-right: 12px;
+		flex-grow: 1;
+	}
+	&__apps-wrap {
+		display: flex;
+		align-items: center;
+		margin-right: 24px;
+		max-height: 41.99px;
+		overflow: hidden;
+		flex-wrap: wrap;
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
 	//
+	&__add-app {
+		@extend .btn, .btn-success;
+		transition-duration: 0.4s;
+		@include media-breakpoint-up(lg) {
+			padding-top: 11px;
+			padding-bottom: 10px;
+			padding-left: 16px;
+			padding-right: 16px;
+			min-width: 176.43px;
+		}
+		position: relative;
+		@include media-breakpoint-down(lg) {
+			width: 32px;
+			height: 32px;
+		}
+		span {
+			margin-left: 10px;
+			font-size: 14px;
+			line-height: calc(19 / 14);
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
+		.icon {
+			width: 16px;
+			height: 16px;
+			@include media-breakpoint-down(lg) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+	&__profile-menu {
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-up(lg) {
+			padding-left: 24px;
+			padding-right: 24px;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+		padding-left: 12px;
+	}
+	&__profile-person {
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-up(lg) {
+			margin-right: 15px;
+		}
+	}
+	&__profile-pic {
+		img {
+			width: 40px;
+			height: 40px;
+			border: 50%;
+		}
+	}
+	&__profile-name {
+		font-weight: bold;
+		font-size: 14px;
+		line-height: calc(19 / 14);
+		color: black;
+		margin-left: 12px;
+		max-width: 104px;
+		max-height: 38px;
+		overflow: hidden;
+		position: relative;
+		@include media-breakpoint-up(lg) {
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				width: 50%;
+				height: 100%;
+				top: 0;
+				background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+			}
+		}
+	}
+	&__notification {
+		cursor: pointer;
+		.icon {
+			width: 24px;
+			height: 24px;
+			color: $body-color !important;
+		}
+		position: relative;
+		&--fill {
+			&::before {
+				content: "";
+				position: absolute;
+				left: -6px;
+				top: -6px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: $orange;
+			}
+		}
+	}
+	&__settings {
+		cursor: pointer;
+		.icon {
+			width: 24px;
+			height: 24px;
+		}
+		margin-left: 25px;
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+	&__logout {
+		margin-left: 24px;
+		.icon {
+			transition-duration: 0.4s;
+			color: #7d7d7d;
+			width: 24px;
+			height: 24px;
+		}
+		&:hover {
+			.icon {
+				color: $body-color;
+			}
+		}
+	}
 	@include media-breakpoint-between(md, xl) {
 	}
 	@include media-breakpoint-down(xl) {

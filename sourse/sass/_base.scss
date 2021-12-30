@@ -464,7 +464,15 @@ iframe {
 	display: flex;
 	flex-grow: 1;
 	min-height: calc(100vh - 56px);
-	@include media-breakpoint-up(lg){
+	@include media-breakpoint-up(lg) {
 		min-height: calc(100vh - 72px);
 	}
+}
+
+.btn {
+	border-radius: 8px;
+	font-weight: bold;
+}
+.btn-success {
+	color: $white !important;
 }

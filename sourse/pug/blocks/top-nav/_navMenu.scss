@@ -23,7 +23,7 @@
 
 @include media-breakpoint-down(lg) {
 	.toggle-menu-mobile {
-		--h: #{em(2)};
+		--h: 0.166em;
 		--color: #333333;
 		--position: calc(var(--h) * 2);
 		&.on span {

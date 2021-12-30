@@ -6,4 +6,32 @@ mixin topLine()
 				img(src="img/svg/logo-mini.svg", alt="")
 		+b.toggle-menu-mobile--js.d-lg-none
 			span
+		+e.center
+			+e.logo(href="/").d-lg-none
+				img(src="img/svg/logo-mini.svg", alt="")
+			+e.apps-wrap
+				+app-item(`ОД`)
+				+app-item(`ДИ`)
+				+app-item(`СО`)
+				+app-item(`ДП`)
+				+app-item(`СБ`)
+				+app-item(`Ст.ГКП`)
+				+app-item(`ГП`,`danger`)
+				+app-item(`ЛНС`,`danger`)
+				+app-item(`БПЛА`)
+				+app-item(`ГК`)
+			+e.BUTTON.add-app(type="button")
+				+icon('plus')
+				span Добавить заявку
+		+e.profile-menu
+			+e.profile-person
+				+e.profile-pic
+					img(src="img/@2x/avatar.png", alt="")
+				+e.profile-name Ольга<br>Константинова
+			+e.notification--fill
+				+icon('bell')
+			+e.settings
+				+icon('gear')
+			+e.logout(href="#")
+				+icon('logout')
 	// end topLine

@@ -28,7 +28,7 @@ $utilities: (
         // 25: .25,
         // 50: .5,
         // 75: .75,
-        // 100: 1,,,,,,,
+        // 100: 1,,,,,,,,
       ),
   ),
 );
@@ -124,7 +124,7 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
-$theme-colors: map-remove($theme-colors, "info", "light", "dark", "success", "warning");
+$theme-colors: map-remove($theme-colors, "info", "light", "dark", "warning");
 
 // scss-docs-start theme-colors-rgb
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
@@ -210,7 +210,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: #333333;
 $body-text-align: null !default;
 
 // Utilities maps
