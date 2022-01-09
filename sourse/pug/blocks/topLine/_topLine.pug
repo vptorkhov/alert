@@ -30,8 +30,32 @@ mixin topLine()
 				+e.profile-name Ольга<br>Константинова
 			+e.notification--fill
 				+icon('bell')
-			+e.settings
+			+e.settings.profile-settings
 				+icon('gear')
 			+e.logout(href="#")
 				+icon('logout')
+		+e.profile-toggle.profile-settings
+			img(src="img/@2x/avatar.png", alt="")
+			+icon('arrow')
+		+e.profile-mob-menu
+			+e.profile-mob-menu-head
+				+e.profile-person
+					+e.profile-pic
+						img(src="img/@2x/avatar.png", alt="")
+					+e.profile-name Ольга<br>Константинова
+				+e.logout(href="#")
+					+icon('logout')
+			+e.notifications-menu
+				+e.notifications-menu-title Настройка уведомлений
+				+e.form-check.form-switch
+					input.form-check-input(type='checkbox' role='switch')
+					label.form-check-label Звуковые уведомления о событиях
+				+e.form-check.form-switch
+					input.form-check-input(type='checkbox' role='switch')
+					label.form-check-label Уведомления о событиях на почту
+				+e.form-check.form-switch
+					input.form-check-input(type='checkbox' role='switch')
+					label.form-check-label Уведомлений только по своему региону
+			+e.profile-mob-menu-foot
+				+e.admin-link(href="#") Панель администратора
 	// end topLine

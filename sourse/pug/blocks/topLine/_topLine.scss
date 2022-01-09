@@ -8,6 +8,7 @@
 		--sPB: 8px;
 		padding-left: 8px;
 		padding-right: 8px;
+		align-items: center;
 	}
 	.toggle-menu-mobile {
 		@include media-breakpoint-down(lg) {
@@ -42,8 +43,8 @@
 			border-right: 1px solid #ebf1f9;
 			padding-left: 24px;
 			padding-right: 24px;
-			padding-top: 16px;
-			padding-bottom: 16px;
+			padding-top: 12px;
+			padding-bottom: 12px;
 		}
 		align-items: center;
 		padding-left: 8px;
@@ -105,7 +106,17 @@
 			padding-top: 16px;
 			padding-bottom: 16px;
 		}
-		padding-left: 12px;
+		padding-left: 20px;
+		.topLine__profile-person {
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
+		.topLine__logout {
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
 	}
 	&__profile-person {
 		display: flex;
@@ -127,11 +138,12 @@
 		line-height: calc(19 / 14);
 		color: black;
 		margin-left: 12px;
-		max-width: 104px;
 		max-height: 38px;
 		overflow: hidden;
 		position: relative;
 		@include media-breakpoint-up(lg) {
+			max-width: 104px;
+			min-width: 103px;
 			&::after {
 				content: "";
 				position: absolute;
@@ -141,6 +153,49 @@
 				top: 0;
 				background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 			}
+		}
+	}
+	&__profile-toggle {
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+		cursor: pointer;
+		position: relative;
+		border-radius: 150px;
+		width: 68px;
+		height: 40px;
+		background-color: #e5f1ff;
+		transition-duration: 0.4s;
+		margin-left: 20px;
+		&:hover {
+			background-color: #a1b2c8;
+			.icon {
+				stroke: $white;
+			}
+		}
+		img {
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+		}
+		.icon {
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			color: transparent;
+			stroke: black;
+			width: 15px;
+			height: 7.5px;
+			transition-duration: 0.4s;
+		}
+	}
+	&__profile-toggle.active {
+		background-color: #a1b2c8;
+		.icon {
+			stroke: $white;
 		}
 	}
 	&__notification {
@@ -188,6 +243,94 @@
 				color: $body-color;
 			}
 		}
+	}
+	&__profile-mob-menu {
+		background-color: $white;
+		position: absolute;
+		@include media-breakpoint-down(lg) {
+			top: 56px;
+			left: 0;
+			width: 100%;
+		}
+		@include media-breakpoint-up(lg) {
+			top: 72px;
+			right: 0;
+			width: 360px;
+		}
+		transform: translateY(-150%);
+		transition-duration: 0.4s;
+		opacity: 0;
+		box-shadow: 0px 0px 42px rgba(0, 0, 0, 0.25);
+		&::before {
+			content: "";
+			position: absolute;
+			top: -3px;
+			@include media-breakpoint-up(lg) {
+				right: 77px;
+			}
+			right: 19px;
+			width: 11px;
+			height: 11px;
+			background-color: $white;
+			transform: rotate(45deg);
+		}
+	}
+	&__profile-mob-menu.active {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	&__profile-mob-menu-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 17px;
+		border-bottom: 1px solid rgba(#d8e2ed, 0.5);
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+	&__notifications-menu {
+		padding: 24px;
+		padding-top: 17px;
+		border-bottom: 1px solid rgba(#d8e2ed, 0.5);
+	}
+	&__notifications-menu-title {
+		font-weight: bold;
+		line-height: calc(22 / 16);
+		margin-bottom: 24px;
+	}
+	&__profile-mob-menu-foot {
+		padding-top: 17px;
+		padding-bottom: 17px;
+		padding-left: 26px;
+		padding-right: 26px;
+	}
+	&__admin-link {
+		font-weight: bold;
+		line-height: calc(22 / 16);
+		color: $body-color;
+	}
+	&__form-check {
+		&:last-child {
+			margin-bottom: 0;
+		}
+		margin-bottom: 16px;
+	}
+	.form-check-label {
+		font-size: 14px;
+		line-height: calc(19 / 14);
+		color: black;
+		margin-left: 12px;
+	}
+	.form-check-input {
+		border-color: transparent !important;
+		background-image: url("../img/svg/switch-bg.svg") !important;
+		background-position: 1px 0;
+		background-color: #e7e7e7;
+	}
+	.form-check-input:checked {
+		background-color: $orange;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E") !important;
 	}
 	@include media-breakpoint-between(md, xl) {
 	}

@@ -1,5 +1,5 @@
 "use strict";
-const JSCCommon = { 
+const JSCCommon = {
 	modalCall() {
 		const link = ".link-modal-js";
 
@@ -14,11 +14,11 @@ const JSCCommon = {
 			l10n: {
 				Escape: "Закрыть",
 				NEXT: "Вперед",
-				PREV: "Назад", 
-			}, 
-		}); 
-		document.querySelectorAll(".modal-close-js").forEach(el=>{
-			el.addEventListener("click", ()=>{
+				PREV: "Назад",
+			},
+		});
+		document.querySelectorAll(".modal-close-js").forEach(el => {
+			el.addEventListener("click", () => {
 				Fancybox.close();
 			})
 		})
@@ -73,7 +73,7 @@ const JSCCommon = {
 		}
 
 	},
-	mobileMenu() { 
+	mobileMenu() {
 		const menu = document.querySelector(".menu-mobile--js");
 		if (!menu) return;
 		this.toggleMenu();
@@ -291,7 +291,7 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
-	
+
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
@@ -300,6 +300,10 @@ function eventHandler() {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
+	$('.profile-settings').click(function () {
+		$(this).toggleClass('active');
+		$('.topLine__profile-mob-menu').toggleClass('active');
+	});
 
 	function setFixedNav() {
 		let topNav = document.querySelector('.top-nav  ');
