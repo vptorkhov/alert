@@ -1,0 +1,29 @@
+mixin sAppsIndex(data)
+	// start sAppsIndex
+	+b.sAppsIndex
+		.tabs
+			.swiper.buttonsBlock
+				.tabs__caption.swiper-wrapper
+					.tabs__btn.swiper-slide.active Мои заявки
+					.tabs__btn.swiper-slide Моя смена
+					.tabs__btn.swiper-slide Мои звонки
+			.tabs__content-wrap
+				.tabs__content.active
+					+MyApps()
+				.tabs__content
+					p Моя смена
+				.tabs__content
+					p Мои звонки
+
+mixin MyApps()
+	+e.myApps
+		+search()
+		+e.apps-wrap
+			+one-app(1,'footer')
+			+one-app(2)
+			+one-app(1)
+			+one-app(1,'footer')
+			+one-app(1)
+			+one-app(1)
+			+one-app(1)
+		+pagin()

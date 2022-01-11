@@ -283,7 +283,7 @@ const $ = jQuery;
 function eventHandler() {
 	// JSCCommon.ifie();
 	JSCCommon.modalCall();
-	// JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	// JSCCommon.inputMask();
 	// JSCCommon.sendForm();
@@ -305,6 +305,14 @@ function eventHandler() {
 		$('.topLine__profile-mob-menu').toggleClass('active');
 	});
 
+	$('.sPersonalIndex__shifts-title').click(function(){
+		$('.sPersonalIndex__shifts-body').slideToggle();
+		$('.sPersonalIndex__shifts').toggleClass('active');
+	});
+	$('.sPersonalIndex__tasks-title').click(function(){
+		$('.sPersonalIndex__tasks-body').slideToggle();
+		$('.sPersonalIndex__tasks').toggleClass('active');
+	});
 	function setFixedNav() {
 		let topNav = document.querySelector('.top-nav  ');
 		if (!topNav) return;
@@ -350,6 +358,14 @@ function eventHandler() {
 		},
 	}
 
+	const shiftsSlider = new Swiper('.sPersonalIndex__shifts-slider--js', {
+		slidesPerView: 'auto',
+		spaceBetween: 17,
+	});
+	const buttonsBlock = new Swiper('.buttonsBlock', {
+		slidesPerView: 'auto',
+		spaceBetween: 8,
+	});
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,

@@ -1,0 +1,25 @@
+// start .sMainBlock
+.sMainBlock {
+	// --sPB: ;
+	// --sTPB: ;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: #f4f9ff;
+	@include media-breakpoint-up(lg) {
+		flex-direction: row;
+		flex-grow: 1;
+	}
+	--sPT: 0;
+	--sPB: 0;
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sMainBlock

@@ -476,3 +476,59 @@ iframe {
 .btn-success {
 	color: $white !important;
 }
+.buttonsBlock {
+	@include media-breakpoint-down(lg) {
+		overflow: unset;
+	}
+}
+.tabs {
+	&__btn {
+		width: auto;
+		cursor: pointer;
+		@include mt;
+		// margin-right: 8px;
+		@include media-breakpoint-up(lg) {
+			padding-top: 8px;
+			padding-bottom: 7px;
+			padding-left: 16px;
+			padding-right: 16px;
+			font-size: 18px;
+			line-height: calc(25 / 18);
+		}
+		font-weight: bold;
+		font-size: 16px;
+		line-height: calc(22 / 16);
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: $body-color;
+		background-color: transparent;
+		border-radius: 8px;
+		border: 1px solid #a1b2c8;
+		&.active,
+		&:hover {
+			color: $white;
+			background-color: $primary;
+			border-color: transparent;
+		}
+	}
+}
+.btn-warning {
+	background-color: $orange;
+	transition-duration: 0.4s;
+	color: $white !important;
+	&:hover {
+		background-color: #ff8800;
+	}
+}
+.btn-outline-warning {
+	background-color: transparent;
+	transition-duration: 0.4s;
+	color: $orange;
+	border: 1px solid $orange;
+	&:hover {
+		background-color: $orange;
+		color: $white;
+	}
+}

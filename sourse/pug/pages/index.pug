@@ -2,21 +2,25 @@ extends layout/main.pug
 
 
 include ../blocks/sContent/_sContent.pug
-include ../blocks/sMainPage/_sMainPage.pug
+include ../blocks/sMainBlock/_sMainBlock.pug
+include ../blocks/sAppsIndex/_sAppsIndex.pug
+include ../blocks/sPersonalIndex/_sPersonalIndex.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
 
 block title
-	- let  title= 'title'
+	- let  title= 'Главная'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	+topLine()
 	.main-content
 		+top-nav()
-		+sMainPage()
+		+sMainBlock()
+			+sAppsIndex()
+			+sPersonalIndex()
 
 
 

@@ -1,0 +1,42 @@
+mixin sPersonalIndex(data)
+	// start sPersonalIndex
+	+b.sPersonalIndex
+		h1 Главное
+		+e.start-btn(href="#") Начать смену
+		+e.shifts
+			+e.shifts-title Ближайшие дежурства
+			+icon('arrow')
+			+e.shifts-body
+				+e.chart(href="#") График
+				+e.shifts-slider--js.swiper
+					.swiper-wrapper
+						mixin slide(date,day)
+							+e.shifts-item.swiper-slide
+								+e.shifts-item-title ДП
+								+e.shifts-item-date!=date
+								+e.shifts-item-day!=day
+								+e.shifts-item-time 14:00 - 21:00
+						+slide(`18.11.21`,`Среда`)
+						+slide(`19.11.21`,`Четверг`)
+						+slide(`22.11.21`,`Воскресенье`)
+						+slide(`18.11.21`,`Среда`)
+						+slide(`19.11.21`,`Четверг`)
+						+slide(`22.11.21`,`Воскресенье`)
+		+e.tasks
+			+e.tasks-title Мои задачи
+			+icon('arrow')
+			+e.tasks-body
+				+e.all-tasks(href="#") Все задачи
+				mixin item(name)
+					+e.one-task
+						+e.task-info
+							+e.task-number #3586
+							+e.task-name!=name
+						+e.task-status--work В работе
+				+item(`Прозвон больниц`)
+				+item(`Cвязаться с водителем`)
+				+item(`Прозвон больниц`)
+				+item(`Заполнить график дежурства`)
+		+e.algoritm-btn(href="#") Алгоритмы и инструкции
+
+	// end sPersonalIndex

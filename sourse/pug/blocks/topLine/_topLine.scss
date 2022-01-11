@@ -234,7 +234,7 @@
 		margin-left: 24px;
 		.icon {
 			transition-duration: 0.4s;
-			color: #7d7d7d;
+			color: $secondary;
 			width: 24px;
 			height: 24px;
 		}
@@ -247,6 +247,7 @@
 	&__profile-mob-menu {
 		background-color: $white;
 		position: absolute;
+		z-index: 10;
 		@include media-breakpoint-down(lg) {
 			top: 56px;
 			left: 0;

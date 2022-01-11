@@ -34,3 +34,72 @@ mixin app-item(title,status)
 	+b.app-item(class=(status ? `--danger` : ``))
 		+e.title!=title
 
+mixin search()
+	+b.search-wrap
+		+e.search-block
+			+e.INPUT.search(placeholder="Поиск")
+			+e.BUTTON.search-btn(type="button")
+		+e.BUTTON.filter-btn(type="button")
+			+icon('sort-1')
+			+icon('sort-2')
+			span Фильтры
+
+
+mixin one-app(variant,footer)
+	+b.one-app(href="#")
+		+e.body
+			+e.number
+				+e.number-top
+					if (variant==1)
+						p #1855
+					if (variant==2)
+						p #1855
+						+e.number-status У
+				+e.number-icons
+					+icon('attention')
+					+icon('city')
+					+icon('forest')
+			+e.people
+				+e.people-item
+					+e.short-info
+						+e.people-status--new Новая
+						+e.people-age
+							+icon('woman')
+							span 26 лет
+					+e.people-name Пичугина (Букина) Светлана Семёновна
+				if (variant == 2)
+					+e.people-item
+						+e.short-info
+							+e.people-status--found Найден, жив
+							+e.people-age
+								+icon('man')
+								span 26 лет
+						+e.people-name Лебедев Степан Юрьевич
+					+e.people-item
+						+e.short-info
+							+e.people-status--new Новая
+							+e.people-age
+								+icon('woman')
+								span 26 лет
+						+e.people-name Анисимова Дарья Сергеевна
+				if (variant==1)
+					+e.place Самарская область
+				else
+					+e.place Ленинградская область
+			+e.dates
+				+e.dates-block--missing
+					+e.dates-block-title Время пропажи:
+					+e.dates-block-caption 06.11.21 в 18:15
+				+e.dates-block--app
+					+e.dates-block-title Заявка создана:
+					+e.dates-block-caption 06.11.21 в 18:15
+		if footer
+			+e.footer
+				+e.info-wrap
+					+e.info-item Прозвоны: 3
+					+e.info-item Задачи: 1
+					+e.info-item Прозвоны учреждений: 5/15
+					+e.info-item Звонки: 12 
+						+e.SPAN.info-item-new 11
+					+e.info-item Письма в службы: 1
+				+e.comments Комментарии: 1
